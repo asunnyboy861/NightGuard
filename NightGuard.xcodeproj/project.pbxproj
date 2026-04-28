@@ -1,0 +1,1182 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0588CD5CA8C5D769368EC43D /* FamilyControls.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9177C71C85BC1E3A28EB87E7 /* FamilyControls.framework */; };
+		0978481EDD924683673CC8D6 /* StopNightGuardIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0A6D9BA1AF3EB5C84EA2AF /* StopNightGuardIntent.swift */; };
+		0AAD094D6B3C754F4FDA05D1 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFD05F248ABD41D2595B440 /* OnboardingView.swift */; };
+		0C32125A8B8700DC22E95D80 /* ManagedSettingsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F2790FE4C5AE79D6B59D1FA /* ManagedSettingsUI.framework */; };
+		0D00D8DE141BFCE214B86ACB /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB3ACE93DF6B9DE55D999F /* StatsView.swift */; };
+		1290E042A89A27FECE8B36DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50A433CF3FD775969376AE04 /* Assets.xcassets */; };
+		176D2A98F590B6CBB8BB2CF2 /* ManagedSettings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B9F59EE4BA3B24C996CA54F /* ManagedSettings.framework */; };
+		194BA80144A2D064C55C442E /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898A11623C740A6CF7238F2B /* PaywallView.swift */; };
+		1BC4D63C73C7A6D9F6CD2465 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8C97A343D19154B1927FCE /* UserNotifications.framework */; };
+		1BD861B62184D7207DDC4BE3 /* ShieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABFFB59BF7B38BEAC083938 /* ShieldViewModel.swift */; };
+		24343C84030919105C826EC7 /* ActiveShieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF2C2330A1ABEFAE1C1AD9 /* ActiveShieldView.swift */; };
+		2F380A5C2727A660697562CB /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277E30580B37C61B5A6AEFC0 /* MainTabView.swift */; };
+		337D86F15D39261C53638307 /* SleepRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9D3416BD5171A976F8A23D /* SleepRecord.swift */; };
+		346A939C95A9C426045551F1 /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175A8712AFBE89A893B7F6BF /* ScheduleViewModel.swift */; };
+		37D5ECFCB0D2DFC8512B32FC /* DeviceActivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBDF62138C069F2EAE3CBD8B /* DeviceActivity.framework */; };
+		445E84832BBCF9290E5E06D2 /* BedtimeSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3543F26270E927ADA98D70B6 /* BedtimeSchedule.swift */; };
+		4923840258BCD71FE69E59AB /* ScheduleSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F15A50390171247C0D437E /* ScheduleSetupView.swift */; };
+		497DF768746BD2949F6BECB6 /* SimulatedShutdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1DCBEC60102DFFE28BBFB5 /* SimulatedShutdown.swift */; };
+		4AB173FDA24665D50E20CD93 /* ManagedSettings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B9F59EE4BA3B24C996CA54F /* ManagedSettings.framework */; };
+		4C3288CDFAAA6E574790B7CC /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C1906230AB56C569B4F9B0E /* MessageUI.framework */; };
+		4D1E9CC320EB1417C97BEA2C /* AppIntents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8BA03220A157BD3D41207E /* AppIntents.framework */; };
+		53062D74791F7377832225CC /* SwiftData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 412D286363F7B72919C26E72 /* SwiftData.framework */; };
+		55CB795AC180831F45C22AFD /* ShieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D64FEEA771B3AF91B3FE2F /* ShieldView.swift */; };
+		5C28EFAE9635D8032DB7950D /* ShieldActionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4225F59FFFD15301BFC75CDD /* ShieldActionExtension.swift */; };
+		6B5DFCA5DC59409767187F9C /* FamilyControls.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9177C71C85BC1E3A28EB87E7 /* FamilyControls.framework */; };
+		6B7118410F35A3B45FCF775A /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFDA1DBDF924D399DEA2241 /* OnboardingViewModel.swift */; };
+		6F51905945FEEEB15201906E /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE4FA95CABCDA3F10344C62 /* StatsViewModel.swift */; };
+		709AB96FD4E861C438315C83 /* AccountabilityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7128915CD14A274E1578C1 /* AccountabilityService.swift */; };
+		76DF2D589B1604308CE9FE2C /* MorningStreak.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC6B8D85403BDBB4266B750 /* MorningStreak.swift */; };
+		76EB0973AEEDA8EB92EF9238 /* PartnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA70610835DEB609F3FBCE5 /* PartnerView.swift */; };
+		8612EEF95A3B71B50F9A2EEA /* ManagedSettingsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F2790FE4C5AE79D6B59D1FA /* ManagedSettingsUI.framework */; };
+		90056ED697E8FBEAE114CE5D /* NightGuardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B021156C69B25B2AE1073B /* NightGuardUITests.swift */; };
+		96B74A8027A9EF9F83941E6C /* AppGroupConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684E6757BBA94A2472B5A7A /* AppGroupConstants.swift */; };
+		9D162ADF437C3F14B88C6FEF /* FamilyControls.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9177C71C85BC1E3A28EB87E7 /* FamilyControls.framework */; };
+		A17C1E2AA58EA77283777BC5 /* DeviceActivityMonitorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EDBF0AEEED98F1578F4C84 /* DeviceActivityMonitorExtension.swift */; };
+		A5268E731FE3D177EA81A932 /* ShieldActionExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 375FBDC9E3B187552EA74645 /* ShieldActionExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A5E1E4E0E2BD2F4C8988EC57 /* ChainScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B2F066CF1322527FFC993D /* ChainScheduler.swift */; };
+		A8A528D76AFE20B12E3AFE63 /* SupportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F0F39F9E1EC20E8F58A61F /* SupportView.swift */; };
+		AC63436931F067E273ACD9E6 /* ScheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B1BEB19FB7E65DDB458BF8 /* ScheduleManager.swift */; };
+		AC69A02D16D5347B29396C8B /* ShieldConfigurationExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = DEC21B3B1F64C6BCB5AC1ACF /* ShieldConfigurationExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		ADC8E37DDF0916436FD5EBA2 /* NightGuardUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FCF58E63FD23B9BAEF4BBD /* NightGuardUITestsLaunchTests.swift */; };
+		B52E2B9B6AA896C3AE33E8C7 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8088B4C6CF232F56197216F /* SettingsView.swift */; };
+		B6D7C9460B2BCF414F9C839B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A56F73530E75DD3D132719 /* StoreKit.framework */; };
+		B6E454A8121FD8A31BD6B234 /* NightGuardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CB1819C23F4482D1AC1D6B /* NightGuardTests.swift */; };
+		BF0E584D4D5D5450DCE9AA0C /* ShieldConfigurationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FCB67AB75D4781A3DC134A /* ShieldConfigurationExtension.swift */; };
+		C551E87887D907FA54CBE268 /* FamilyControls.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9177C71C85BC1E3A28EB87E7 /* FamilyControls.framework */; };
+		C7133F03AAD7297124612E72 /* ShieldManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EC7D25A18D1C4340F270AF /* ShieldManager.swift */; };
+		D8EABBC99897DBE84EAC5342 /* ManagedSettings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B9F59EE4BA3B24C996CA54F /* ManagedSettings.framework */; };
+		E331D335E117E01307760041 /* DeviceActivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBDF62138C069F2EAE3CBD8B /* DeviceActivity.framework */; };
+		E6F63D7E177CCF8216919810 /* StartNightGuardIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F6662ADB56F589BF3DE1E3 /* StartNightGuardIntent.swift */; };
+		EB711E771C70076D7DB472D4 /* ManagedSettings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B9F59EE4BA3B24C996CA54F /* ManagedSettings.framework */; };
+		EDF26F3847FDC7A84600FCA3 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3022B2CB2B405D543A0FF379 /* StoreManager.swift */; };
+		F2079747469A9AE17F5E3D91 /* DeviceActivityMonitorExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 65B7B1944083098F805CCFDB /* DeviceActivityMonitorExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F5255610680B10278D99C7B7 /* AppSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DE99D67E855C37363DC0EF /* AppSelectionView.swift */; };
+		FA0F9216AB9ECFC497D5EF09 /* AccountabilityPartner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BAF501C690098789B14990 /* AccountabilityPartner.swift */; };
+		FABE11FB7F14988D3C27D37F /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61727D89EF3E8563C7706294 /* NotificationManager.swift */; };
+		FCB9C1E0DB706048BF50FABE /* NightGuardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DC9DCC50819AD9A2D56C47 /* NightGuardApp.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0F788A8D25AD320B573E28DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE58AB9A6DEA428BBB3A2D72 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A27D528A43834DC257DA3B9C;
+			remoteInfo = ShieldConfigurationExtension;
+		};
+		43C54431D0BF0D6C06B729F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE58AB9A6DEA428BBB3A2D72 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A898B24ECB04E7F3DE2F502E;
+			remoteInfo = NightGuard;
+		};
+		594BEDEC93615A081020D01E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE58AB9A6DEA428BBB3A2D72 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A898B24ECB04E7F3DE2F502E;
+			remoteInfo = NightGuard;
+		};
+		9D3D4191DE70293ADAFF7AD1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE58AB9A6DEA428BBB3A2D72 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 554AF1DC8FE46266AF6BCA59;
+			remoteInfo = ShieldActionExtension;
+		};
+		9FD6D4231E4A0DB5B5DF557F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE58AB9A6DEA428BBB3A2D72 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA17B2F71CEDFCBBFFA64A65;
+			remoteInfo = DeviceActivityMonitorExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		565026F0C1294915943AD365 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		565026F0C1294915943AD366 /* Embed Extensions for Device */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${BUILT_PRODUCTS_DIR}/ShieldConfigurationExtension.appex",
+				"${BUILT_PRODUCTS_DIR}/ShieldActionExtension.appex",
+				"${BUILT_PRODUCTS_DIR}/DeviceActivityMonitorExtension.appex",
+			);
+			name = "Embed Extensions for Device";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${PRODUCT_NAME}.app/PlugIns/ShieldConfigurationExtension.appex",
+				"${TARGET_BUILD_DIR}/${PRODUCT_NAME}.app/PlugIns/ShieldActionExtension.appex",
+				"${TARGET_BUILD_DIR}/${PRODUCT_NAME}.app/PlugIns/DeviceActivityMonitorExtension.appex",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$EFFECTIVE_PLATFORM_NAME\" != \"-iphonesimulator\" ]]; then\n  mkdir -p \"${TARGET_BUILD_DIR}/${PRODUCT_NAME}.app/PlugIns\"\n  cp -R \"${BUILT_PRODUCTS_DIR}/ShieldConfigurationExtension.appex\" \"${TARGET_BUILD_DIR}/${PRODUCT_NAME}.app/PlugIns/\"\n  cp -R \"${BUILT_PRODUCTS_DIR}/ShieldActionExtension.appex\" \"${TARGET_BUILD_DIR}/${PRODUCT_NAME}.app/PlugIns/\"\n  cp -R \"${BUILT_PRODUCTS_DIR}/DeviceActivityMonitorExtension.appex\" \"${TARGET_BUILD_DIR}/${PRODUCT_NAME}.app/PlugIns/\"\nfi";
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0684E6757BBA94A2472B5A7A /* AppGroupConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroupConstants.swift; sourceTree = "<group>"; };
+		0C6FB06FA8AFDAB69E6CF4A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		10DF2C2330A1ABEFAE1C1AD9 /* ActiveShieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveShieldView.swift; sourceTree = "<group>"; };
+		175A8712AFBE89A893B7F6BF /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
+		19EDBF0AEEED98F1578F4C84 /* DeviceActivityMonitorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceActivityMonitorExtension.swift; sourceTree = "<group>"; };
+		1B9F59EE4BA3B24C996CA54F /* ManagedSettings.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ManagedSettings.framework; path = System/Library/Frameworks/ManagedSettings.framework; sourceTree = SDKROOT; };
+		1C59D010E4F706E1C7BA5DA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		1D7128915CD14A274E1578C1 /* AccountabilityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountabilityService.swift; sourceTree = "<group>"; };
+		1FFDA1DBDF924D399DEA2241 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		277E30580B37C61B5A6AEFC0 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		2DE4FA95CABCDA3F10344C62 /* StatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModel.swift; sourceTree = "<group>"; };
+		2E1DCBEC60102DFFE28BBFB5 /* SimulatedShutdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatedShutdown.swift; sourceTree = "<group>"; };
+		3022B2CB2B405D543A0FF379 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
+		3543F26270E927ADA98D70B6 /* BedtimeSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BedtimeSchedule.swift; sourceTree = "<group>"; };
+		375FBDC9E3B187552EA74645 /* ShieldActionExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = ShieldActionExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		40F6662ADB56F589BF3DE1E3 /* StartNightGuardIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartNightGuardIntent.swift; sourceTree = "<group>"; };
+		412D286363F7B72919C26E72 /* SwiftData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftData.framework; path = System/Library/Frameworks/SwiftData.framework; sourceTree = SDKROOT; };
+		4225F59FFFD15301BFC75CDD /* ShieldActionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldActionExtension.swift; sourceTree = "<group>"; };
+		43B1BEB19FB7E65DDB458BF8 /* ScheduleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleManager.swift; sourceTree = "<group>"; };
+		49FCF58E63FD23B9BAEF4BBD /* NightGuardUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightGuardUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		50A433CF3FD775969376AE04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		54B021156C69B25B2AE1073B /* NightGuardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightGuardUITests.swift; sourceTree = "<group>"; };
+		5CFD05F248ABD41D2595B440 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		61727D89EF3E8563C7706294 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		65B7B1944083098F805CCFDB /* DeviceActivityMonitorExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = DeviceActivityMonitorExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BE4D09281CDDC8D48324920 /* NightGuardUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = NightGuardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E5FB9C3C0B2553AB2A40D5B /* NightGuardTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = NightGuardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		70DE99D67E855C37363DC0EF /* AppSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSelectionView.swift; sourceTree = "<group>"; };
+		711F9E29E7227C51F7E9E11B /* ShieldConfigurationExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShieldConfigurationExtension.entitlements; sourceTree = "<group>"; };
+		75F15A50390171247C0D437E /* ScheduleSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleSetupView.swift; sourceTree = "<group>"; };
+		7DA70610835DEB609F3FBCE5 /* PartnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerView.swift; sourceTree = "<group>"; };
+		82C2B8BC0EB398946D659C4C /* NightGuard.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = NightGuard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84D64FEEA771B3AF91B3FE2F /* ShieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldView.swift; sourceTree = "<group>"; };
+		898A11623C740A6CF7238F2B /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
+		9177C71C85BC1E3A28EB87E7 /* FamilyControls.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FamilyControls.framework; path = System/Library/Frameworks/FamilyControls.framework; sourceTree = SDKROOT; };
+		9A0A6D9BA1AF3EB5C84EA2AF /* StopNightGuardIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopNightGuardIntent.swift; sourceTree = "<group>"; };
+		9C1906230AB56C569B4F9B0E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		9DAB3ACE93DF6B9DE55D999F /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		9F2790FE4C5AE79D6B59D1FA /* ManagedSettingsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ManagedSettingsUI.framework; path = System/Library/Frameworks/ManagedSettingsUI.framework; sourceTree = SDKROOT; };
+		A5A56F73530E75DD3D132719 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		A8FCB67AB75D4781A3DC134A /* ShieldConfigurationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldConfigurationExtension.swift; sourceTree = "<group>"; };
+		AA8BA03220A157BD3D41207E /* AppIntents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppIntents.framework; path = System/Library/Frameworks/AppIntents.framework; sourceTree = SDKROOT; };
+		B1B2F066CF1322527FFC993D /* ChainScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainScheduler.swift; sourceTree = "<group>"; };
+		B8088B4C6CF232F56197216F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		BC1E7796A55380B5442FD17B /* DeviceActivityMonitorExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DeviceActivityMonitorExtension.entitlements; sourceTree = "<group>"; };
+		CBDF62138C069F2EAE3CBD8B /* DeviceActivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DeviceActivity.framework; path = System/Library/Frameworks/DeviceActivity.framework; sourceTree = SDKROOT; };
+		D29D297391731BEE6176F773 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D842452E356807573A435A45 /* NightGuard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NightGuard.entitlements; sourceTree = "<group>"; };
+		D8DC9DCC50819AD9A2D56C47 /* NightGuardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightGuardApp.swift; sourceTree = "<group>"; };
+		DA8C97A343D19154B1927FCE /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		DEC21B3B1F64C6BCB5AC1ACF /* ShieldConfigurationExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = ShieldConfigurationExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0BAF501C690098789B14990 /* AccountabilityPartner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountabilityPartner.swift; sourceTree = "<group>"; };
+		EA4A6E829885E37A9EDB05AD /* ShieldActionExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShieldActionExtension.entitlements; sourceTree = "<group>"; };
+		EABFFB59BF7B38BEAC083938 /* ShieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldViewModel.swift; sourceTree = "<group>"; };
+		EAC6B8D85403BDBB4266B750 /* MorningStreak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorningStreak.swift; sourceTree = "<group>"; };
+		F1CB1819C23F4482D1AC1D6B /* NightGuardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightGuardTests.swift; sourceTree = "<group>"; };
+		F5EC7D25A18D1C4340F270AF /* ShieldManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldManager.swift; sourceTree = "<group>"; };
+		F8F0F39F9E1EC20E8F58A61F /* SupportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportView.swift; sourceTree = "<group>"; };
+		FD9D3416BD5171A976F8A23D /* SleepRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepRecord.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4B9C561E7AAC70ECF1300325 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B5DFCA5DC59409767187F9C /* FamilyControls.framework in Frameworks */,
+				D8EABBC99897DBE84EAC5342 /* ManagedSettings.framework in Frameworks */,
+				8612EEF95A3B71B50F9A2EEA /* ManagedSettingsUI.framework in Frameworks */,
+				E331D335E117E01307760041 /* DeviceActivity.framework in Frameworks */,
+				B6D7C9460B2BCF414F9C839B /* StoreKit.framework in Frameworks */,
+				4D1E9CC320EB1417C97BEA2C /* AppIntents.framework in Frameworks */,
+				1BC4D63C73C7A6D9F6CD2465 /* UserNotifications.framework in Frameworks */,
+				53062D74791F7377832225CC /* SwiftData.framework in Frameworks */,
+				4C3288CDFAAA6E574790B7CC /* MessageUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6DC2EB53920990936BAB9232 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D162ADF437C3F14B88C6FEF /* FamilyControls.framework in Frameworks */,
+				EB711E771C70076D7DB472D4 /* ManagedSettings.framework in Frameworks */,
+				0C32125A8B8700DC22E95D80 /* ManagedSettingsUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92DBBC98F9E4DC2DE720CB9B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0588CD5CA8C5D769368EC43D /* FamilyControls.framework in Frameworks */,
+				176D2A98F590B6CBB8BB2CF2 /* ManagedSettings.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAC54CA00EB249AE434FBAA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C551E87887D907FA54CBE268 /* FamilyControls.framework in Frameworks */,
+				4AB173FDA24665D50E20CD93 /* ManagedSettings.framework in Frameworks */,
+				37D5ECFCB0D2DFC8512B32FC /* DeviceActivity.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0306766E755016245BBD2933 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BC7ABD46E7E4903F030A5C43 /* AppSelection */,
+				1747C072EE7CF2FDAC4A4415 /* Onboarding */,
+				2289CF5F5DFBED5086EB891D /* Partner */,
+				1B8CDCCDD12443801EFFA692 /* Paywall */,
+				092BA79650C78297D248A8E2 /* Schedule */,
+				05275BB24E7309ED1ADE8980 /* Settings */,
+				974184CC1ABE40355D6DD2E9 /* Shield */,
+				6998741D87EA8B686D90C56C /* Stats */,
+				277E30580B37C61B5A6AEFC0 /* MainTabView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		05275BB24E7309ED1ADE8980 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				B8088B4C6CF232F56197216F /* SettingsView.swift */,
+				F8F0F39F9E1EC20E8F58A61F /* SupportView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		062E874C0139B8AD4C386134 /* NightGuardTests */ = {
+			isa = PBXGroup;
+			children = (
+				F1CB1819C23F4482D1AC1D6B /* NightGuardTests.swift */,
+			);
+			name = NightGuardTests;
+			path = NightGuard/NightGuardTests;
+			sourceTree = "<group>";
+		};
+		092BA79650C78297D248A8E2 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				75F15A50390171247C0D437E /* ScheduleSetupView.swift */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		0981D78CE87E22F4FEF945EC /* ShieldConfigurationExtension */ = {
+			isa = PBXGroup;
+			children = (
+				D29D297391731BEE6176F773 /* Info.plist */,
+				711F9E29E7227C51F7E9E11B /* ShieldConfigurationExtension.entitlements */,
+				A8FCB67AB75D4781A3DC134A /* ShieldConfigurationExtension.swift */,
+			);
+			name = ShieldConfigurationExtension;
+			path = NightGuard/Extensions/ShieldConfigurationExtension;
+			sourceTree = "<group>";
+		};
+		1747C072EE7CF2FDAC4A4415 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				5CFD05F248ABD41D2595B440 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		1901C8201D772B41A8EA40CC /* NightGuard */ = {
+			isa = PBXGroup;
+			children = (
+				FC497BA15B2F166C4F65F69E /* Intents */,
+				81685C0F71E4DC442594673A /* Models */,
+				2B2C797946BA5BAF60267531 /* Services */,
+				9670E347898B1DFB4864B7E2 /* Shared */,
+				CD4AF3D76ABD9F3F54CB1A9C /* ViewModels */,
+				0306766E755016245BBD2933 /* Views */,
+				50A433CF3FD775969376AE04 /* Assets.xcassets */,
+				D842452E356807573A435A45 /* NightGuard.entitlements */,
+				D8DC9DCC50819AD9A2D56C47 /* NightGuardApp.swift */,
+			);
+			name = NightGuard;
+			path = NightGuard/NightGuard;
+			sourceTree = "<group>";
+		};
+		1B8CDCCDD12443801EFFA692 /* Paywall */ = {
+			isa = PBXGroup;
+			children = (
+				898A11623C740A6CF7238F2B /* PaywallView.swift */,
+			);
+			path = Paywall;
+			sourceTree = "<group>";
+		};
+		2289CF5F5DFBED5086EB891D /* Partner */ = {
+			isa = PBXGroup;
+			children = (
+				7DA70610835DEB609F3FBCE5 /* PartnerView.swift */,
+			);
+			path = Partner;
+			sourceTree = "<group>";
+		};
+		2B2C797946BA5BAF60267531 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1D7128915CD14A274E1578C1 /* AccountabilityService.swift */,
+				B1B2F066CF1322527FFC993D /* ChainScheduler.swift */,
+				61727D89EF3E8563C7706294 /* NotificationManager.swift */,
+				43B1BEB19FB7E65DDB458BF8 /* ScheduleManager.swift */,
+				F5EC7D25A18D1C4340F270AF /* ShieldManager.swift */,
+				2E1DCBEC60102DFFE28BBFB5 /* SimulatedShutdown.swift */,
+				3022B2CB2B405D543A0FF379 /* StoreManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		3DD9A64F2542E7C702A6D412 /* DeviceActivityMonitorExtension */ = {
+			isa = PBXGroup;
+			children = (
+				BC1E7796A55380B5442FD17B /* DeviceActivityMonitorExtension.entitlements */,
+				19EDBF0AEEED98F1578F4C84 /* DeviceActivityMonitorExtension.swift */,
+				0C6FB06FA8AFDAB69E6CF4A4 /* Info.plist */,
+			);
+			name = DeviceActivityMonitorExtension;
+			path = NightGuard/Extensions/DeviceActivityMonitorExtension;
+			sourceTree = "<group>";
+		};
+		6998741D87EA8B686D90C56C /* Stats */ = {
+			isa = PBXGroup;
+			children = (
+				9DAB3ACE93DF6B9DE55D999F /* StatsView.swift */,
+			);
+			path = Stats;
+			sourceTree = "<group>";
+		};
+		6AD026C1E5BEE9BBFE4889B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA8BA03220A157BD3D41207E /* AppIntents.framework */,
+				CBDF62138C069F2EAE3CBD8B /* DeviceActivity.framework */,
+				9177C71C85BC1E3A28EB87E7 /* FamilyControls.framework */,
+				1B9F59EE4BA3B24C996CA54F /* ManagedSettings.framework */,
+				9F2790FE4C5AE79D6B59D1FA /* ManagedSettingsUI.framework */,
+				9C1906230AB56C569B4F9B0E /* MessageUI.framework */,
+				A5A56F73530E75DD3D132719 /* StoreKit.framework */,
+				412D286363F7B72919C26E72 /* SwiftData.framework */,
+				DA8C97A343D19154B1927FCE /* UserNotifications.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		758D142CDCC604DE3B0412F7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				65B7B1944083098F805CCFDB /* DeviceActivityMonitorExtension.appex */,
+				82C2B8BC0EB398946D659C4C /* NightGuard.app */,
+				6E5FB9C3C0B2553AB2A40D5B /* NightGuardTests.xctest */,
+				6BE4D09281CDDC8D48324920 /* NightGuardUITests.xctest */,
+				375FBDC9E3B187552EA74645 /* ShieldActionExtension.appex */,
+				DEC21B3B1F64C6BCB5AC1ACF /* ShieldConfigurationExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		81685C0F71E4DC442594673A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E0BAF501C690098789B14990 /* AccountabilityPartner.swift */,
+				3543F26270E927ADA98D70B6 /* BedtimeSchedule.swift */,
+				EAC6B8D85403BDBB4266B750 /* MorningStreak.swift */,
+				FD9D3416BD5171A976F8A23D /* SleepRecord.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9670E347898B1DFB4864B7E2 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				0684E6757BBA94A2472B5A7A /* AppGroupConstants.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		974184CC1ABE40355D6DD2E9 /* Shield */ = {
+			isa = PBXGroup;
+			children = (
+				10DF2C2330A1ABEFAE1C1AD9 /* ActiveShieldView.swift */,
+				84D64FEEA771B3AF91B3FE2F /* ShieldView.swift */,
+			);
+			path = Shield;
+			sourceTree = "<group>";
+		};
+		9929F448C4B70D606803D416 = {
+			isa = PBXGroup;
+			children = (
+				3DD9A64F2542E7C702A6D412 /* DeviceActivityMonitorExtension */,
+				1901C8201D772B41A8EA40CC /* NightGuard */,
+				062E874C0139B8AD4C386134 /* NightGuardTests */,
+				B016595028D111F809346322 /* NightGuardUITests */,
+				A093D519C4D6B795DE8A24D5 /* ShieldActionExtension */,
+				0981D78CE87E22F4FEF945EC /* ShieldConfigurationExtension */,
+				6AD026C1E5BEE9BBFE4889B8 /* Frameworks */,
+				758D142CDCC604DE3B0412F7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A093D519C4D6B795DE8A24D5 /* ShieldActionExtension */ = {
+			isa = PBXGroup;
+			children = (
+				1C59D010E4F706E1C7BA5DA0 /* Info.plist */,
+				EA4A6E829885E37A9EDB05AD /* ShieldActionExtension.entitlements */,
+				4225F59FFFD15301BFC75CDD /* ShieldActionExtension.swift */,
+			);
+			name = ShieldActionExtension;
+			path = NightGuard/Extensions/ShieldActionExtension;
+			sourceTree = "<group>";
+		};
+		B016595028D111F809346322 /* NightGuardUITests */ = {
+			isa = PBXGroup;
+			children = (
+				54B021156C69B25B2AE1073B /* NightGuardUITests.swift */,
+				49FCF58E63FD23B9BAEF4BBD /* NightGuardUITestsLaunchTests.swift */,
+			);
+			name = NightGuardUITests;
+			path = NightGuard/NightGuardUITests;
+			sourceTree = "<group>";
+		};
+		BC7ABD46E7E4903F030A5C43 /* AppSelection */ = {
+			isa = PBXGroup;
+			children = (
+				70DE99D67E855C37363DC0EF /* AppSelectionView.swift */,
+			);
+			path = AppSelection;
+			sourceTree = "<group>";
+		};
+		CD4AF3D76ABD9F3F54CB1A9C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				1FFDA1DBDF924D399DEA2241 /* OnboardingViewModel.swift */,
+				175A8712AFBE89A893B7F6BF /* ScheduleViewModel.swift */,
+				EABFFB59BF7B38BEAC083938 /* ShieldViewModel.swift */,
+				2DE4FA95CABCDA3F10344C62 /* StatsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		FC497BA15B2F166C4F65F69E /* Intents */ = {
+			isa = PBXGroup;
+			children = (
+				40F6662ADB56F589BF3DE1E3 /* StartNightGuardIntent.swift */,
+				9A0A6D9BA1AF3EB5C84EA2AF /* StopNightGuardIntent.swift */,
+			);
+			path = Intents;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		118CD9E391F4861BEBA4A103 /* NightGuardUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB03E1C49FC00BFE4D817C02 /* Build configuration list for PBXNativeTarget "NightGuardUITests" */;
+			buildPhases = (
+				6DF3E0ACF5408E1C24DFF345 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A2580BE797E43377A73A1347 /* PBXTargetDependency */,
+			);
+			name = NightGuardUITests;
+			packageProductDependencies = (
+			);
+			productName = NightGuardUITests;
+			productReference = 6BE4D09281CDDC8D48324920 /* NightGuardUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		554AF1DC8FE46266AF6BCA59 /* ShieldActionExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF291DC793D38533D03F95AC /* Build configuration list for PBXNativeTarget "ShieldActionExtension" */;
+			buildPhases = (
+				50ED8201F823FB17FF93D7CD /* Sources */,
+				92DBBC98F9E4DC2DE720CB9B /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShieldActionExtension;
+			packageProductDependencies = (
+			);
+			productName = ShieldActionExtension;
+			productReference = 375FBDC9E3B187552EA74645 /* ShieldActionExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		80EC1E9F30EC9D71138823D8 /* NightGuardTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A089535FC1276667B766753A /* Build configuration list for PBXNativeTarget "NightGuardTests" */;
+			buildPhases = (
+				E125DDFA162D6F88C09E8FC7 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				75A85108B53A6981BF29A453 /* PBXTargetDependency */,
+			);
+			name = NightGuardTests;
+			packageProductDependencies = (
+			);
+			productName = NightGuardTests;
+			productReference = 6E5FB9C3C0B2553AB2A40D5B /* NightGuardTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A27D528A43834DC257DA3B9C /* ShieldConfigurationExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 209309D175DD96E0CD2DEA9F /* Build configuration list for PBXNativeTarget "ShieldConfigurationExtension" */;
+			buildPhases = (
+				08F375921CB02422068AFAFC /* Sources */,
+				6DC2EB53920990936BAB9232 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShieldConfigurationExtension;
+			packageProductDependencies = (
+			);
+			productName = ShieldConfigurationExtension;
+			productReference = DEC21B3B1F64C6BCB5AC1ACF /* ShieldConfigurationExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		A898B24ECB04E7F3DE2F502E /* NightGuard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 962D7718E16C0050A45703BD /* Build configuration list for PBXNativeTarget "NightGuard" */;
+			buildPhases = (
+				A962B4627FCC489BE18F8180 /* Sources */,
+				93FFE465B67CDE60FC87C3CC /* Resources */,
+				4B9C561E7AAC70ECF1300325 /* Frameworks */,
+				565026F0C1294915943AD365 /* Embed Foundation Extensions */,
+				565026F0C1294915943AD366 /* Remove Extensions for Simulator */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E3586764696FB361C292CA2B /* PBXTargetDependency */,
+				E8780252AC37CCEF8A02E23E /* PBXTargetDependency */,
+				04E970ED63C70D2FDD5436E7 /* PBXTargetDependency */,
+			);
+			name = NightGuard;
+			packageProductDependencies = (
+			);
+			productName = NightGuard;
+			productReference = 82C2B8BC0EB398946D659C4C /* NightGuard.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AA17B2F71CEDFCBBFFA64A65 /* DeviceActivityMonitorExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9498C96A1015C7E6C40E0888 /* Build configuration list for PBXNativeTarget "DeviceActivityMonitorExtension" */;
+			buildPhases = (
+				19CFEC837C69105B0A70CD58 /* Sources */,
+				EAC54CA00EB249AE434FBAA1 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DeviceActivityMonitorExtension;
+			packageProductDependencies = (
+			);
+			productName = DeviceActivityMonitorExtension;
+			productReference = 65B7B1944083098F805CCFDB /* DeviceActivityMonitorExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FE58AB9A6DEA428BBB3A2D72 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1630;
+				TargetAttributes = {
+					118CD9E391F4861BEBA4A103 = {
+						DevelopmentTeam = JP4TN5PTS3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A898B24ECB04E7F3DE2F502E;
+					};
+					554AF1DC8FE46266AF6BCA59 = {
+						DevelopmentTeam = JP4TN5PTS3;
+						ProvisioningStyle = Automatic;
+					};
+					80EC1E9F30EC9D71138823D8 = {
+						DevelopmentTeam = JP4TN5PTS3;
+						ProvisioningStyle = Automatic;
+					};
+					A27D528A43834DC257DA3B9C = {
+						DevelopmentTeam = JP4TN5PTS3;
+						ProvisioningStyle = Automatic;
+					};
+					A898B24ECB04E7F3DE2F502E = {
+						DevelopmentTeam = JP4TN5PTS3;
+						ProvisioningStyle = Automatic;
+					};
+					AA17B2F71CEDFCBBFFA64A65 = {
+						DevelopmentTeam = JP4TN5PTS3;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = A40FF29D72D212688AD56709 /* Build configuration list for PBXProject "NightGuard" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 9929F448C4B70D606803D416;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA17B2F71CEDFCBBFFA64A65 /* DeviceActivityMonitorExtension */,
+				A898B24ECB04E7F3DE2F502E /* NightGuard */,
+				80EC1E9F30EC9D71138823D8 /* NightGuardTests */,
+				118CD9E391F4861BEBA4A103 /* NightGuardUITests */,
+				554AF1DC8FE46266AF6BCA59 /* ShieldActionExtension */,
+				A27D528A43834DC257DA3B9C /* ShieldConfigurationExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		93FFE465B67CDE60FC87C3CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1290E042A89A27FECE8B36DD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		08F375921CB02422068AFAFC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF0E584D4D5D5450DCE9AA0C /* ShieldConfigurationExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19CFEC837C69105B0A70CD58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A17C1E2AA58EA77283777BC5 /* DeviceActivityMonitorExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50ED8201F823FB17FF93D7CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C28EFAE9635D8032DB7950D /* ShieldActionExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6DF3E0ACF5408E1C24DFF345 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90056ED697E8FBEAE114CE5D /* NightGuardUITests.swift in Sources */,
+				ADC8E37DDF0916436FD5EBA2 /* NightGuardUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A962B4627FCC489BE18F8180 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA0F9216AB9ECFC497D5EF09 /* AccountabilityPartner.swift in Sources */,
+				709AB96FD4E861C438315C83 /* AccountabilityService.swift in Sources */,
+				24343C84030919105C826EC7 /* ActiveShieldView.swift in Sources */,
+				96B74A8027A9EF9F83941E6C /* AppGroupConstants.swift in Sources */,
+				F5255610680B10278D99C7B7 /* AppSelectionView.swift in Sources */,
+				445E84832BBCF9290E5E06D2 /* BedtimeSchedule.swift in Sources */,
+				A5E1E4E0E2BD2F4C8988EC57 /* ChainScheduler.swift in Sources */,
+				2F380A5C2727A660697562CB /* MainTabView.swift in Sources */,
+				76DF2D589B1604308CE9FE2C /* MorningStreak.swift in Sources */,
+				FCB9C1E0DB706048BF50FABE /* NightGuardApp.swift in Sources */,
+				FABE11FB7F14988D3C27D37F /* NotificationManager.swift in Sources */,
+				0AAD094D6B3C754F4FDA05D1 /* OnboardingView.swift in Sources */,
+				6B7118410F35A3B45FCF775A /* OnboardingViewModel.swift in Sources */,
+				76EB0973AEEDA8EB92EF9238 /* PartnerView.swift in Sources */,
+				194BA80144A2D064C55C442E /* PaywallView.swift in Sources */,
+				AC63436931F067E273ACD9E6 /* ScheduleManager.swift in Sources */,
+				4923840258BCD71FE69E59AB /* ScheduleSetupView.swift in Sources */,
+				346A939C95A9C426045551F1 /* ScheduleViewModel.swift in Sources */,
+				B52E2B9B6AA896C3AE33E8C7 /* SettingsView.swift in Sources */,
+				C7133F03AAD7297124612E72 /* ShieldManager.swift in Sources */,
+				55CB795AC180831F45C22AFD /* ShieldView.swift in Sources */,
+				1BD861B62184D7207DDC4BE3 /* ShieldViewModel.swift in Sources */,
+				497DF768746BD2949F6BECB6 /* SimulatedShutdown.swift in Sources */,
+				337D86F15D39261C53638307 /* SleepRecord.swift in Sources */,
+				E6F63D7E177CCF8216919810 /* StartNightGuardIntent.swift in Sources */,
+				0D00D8DE141BFCE214B86ACB /* StatsView.swift in Sources */,
+				6F51905945FEEEB15201906E /* StatsViewModel.swift in Sources */,
+				0978481EDD924683673CC8D6 /* StopNightGuardIntent.swift in Sources */,
+				EDF26F3847FDC7A84600FCA3 /* StoreManager.swift in Sources */,
+				A8A528D76AFE20B12E3AFE63 /* SupportView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E125DDFA162D6F88C09E8FC7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6E454A8121FD8A31BD6B234 /* NightGuardTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		04E970ED63C70D2FDD5436E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA17B2F71CEDFCBBFFA64A65 /* DeviceActivityMonitorExtension */;
+			targetProxy = 9FD6D4231E4A0DB5B5DF557F /* PBXContainerItemProxy */;
+		};
+		75A85108B53A6981BF29A453 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A898B24ECB04E7F3DE2F502E /* NightGuard */;
+			targetProxy = 43C54431D0BF0D6C06B729F2 /* PBXContainerItemProxy */;
+		};
+		A2580BE797E43377A73A1347 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A898B24ECB04E7F3DE2F502E /* NightGuard */;
+			targetProxy = 594BEDEC93615A081020D01E /* PBXContainerItemProxy */;
+		};
+		E3586764696FB361C292CA2B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 554AF1DC8FE46266AF6BCA59 /* ShieldActionExtension */;
+			targetProxy = 9D3D4191DE70293ADAFF7AD1 /* PBXContainerItemProxy */;
+		};
+		E8780252AC37CCEF8A02E23E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A27D528A43834DC257DA3B9C /* ShieldConfigurationExtension */;
+			targetProxy = 0F788A8D25AD320B573E28DE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		08CDDE856C038EE94FE49503 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzoutuo.NightGuard.NightGuardTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NightGuard.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NightGuard";
+			};
+			name = Debug;
+		};
+		0D9A8CC2D06CB5081E103FCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = NightGuard/Extensions/ShieldActionExtension/ShieldActionExtension.entitlements;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = NightGuard/Extensions/ShieldActionExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzoutuo.NightGuard.ShieldActionExtension;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0DAB329A8B3FD05E1B8CC254 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = NightGuard/Extensions/ShieldActionExtension/ShieldActionExtension.entitlements;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = NightGuard/Extensions/ShieldActionExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzoutuo.NightGuard.ShieldActionExtension;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		14A3E10EB486FAA7BEE2F995 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = NightGuard/Extensions/ShieldConfigurationExtension/ShieldConfigurationExtension.entitlements;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = NightGuard/Extensions/ShieldConfigurationExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzoutuo.NightGuard.ShieldConfigurationExtension;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		25349646ABF73C06094F3D4A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = NightGuard/NightGuard/NightGuard.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzoutuo.NightGuard;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3E97781244C4FBAB777D355C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = NightGuard/Extensions/ShieldConfigurationExtension/ShieldConfigurationExtension.entitlements;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = NightGuard/Extensions/ShieldConfigurationExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzoutuo.NightGuard.ShieldConfigurationExtension;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		649499CA0F6B59497DD24219 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzoutuo.NightGuard.NightGuardUITests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = NightGuard;
+			};
+			name = Debug;
+		};
+		7D41384B6176DD20E739E750 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = NightGuard/NightGuard/NightGuard.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzoutuo.NightGuard;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		92C00C0375E8B5675FB0887B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzoutuo.NightGuard.NightGuardTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NightGuard.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NightGuard";
+			};
+			name = Release;
+		};
+		946C8E2A0F844084583DE2C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = JP4TN5PTS3;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A84EC0D949396BDC1424F4CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = NightGuard/Extensions/DeviceActivityMonitorExtension/DeviceActivityMonitorExtension.entitlements;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = NightGuard/Extensions/DeviceActivityMonitorExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzoutuo.NightGuard.DeviceActivityMonitorExtension;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D529CD3B3BCC050D89254743 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzoutuo.NightGuard.NightGuardUITests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = NightGuard;
+			};
+			name = Release;
+		};
+		DDC8A718C0F187AF3AFE7079 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = JP4TN5PTS3;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EDB9A6F05D9BD0B92404EBE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = NightGuard/Extensions/DeviceActivityMonitorExtension/DeviceActivityMonitorExtension.entitlements;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = NightGuard/Extensions/DeviceActivityMonitorExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzoutuo.NightGuard.DeviceActivityMonitorExtension;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		209309D175DD96E0CD2DEA9F /* Build configuration list for PBXNativeTarget "ShieldConfigurationExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E97781244C4FBAB777D355C /* Debug */,
+				14A3E10EB486FAA7BEE2F995 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9498C96A1015C7E6C40E0888 /* Build configuration list for PBXNativeTarget "DeviceActivityMonitorExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A84EC0D949396BDC1424F4CA /* Debug */,
+				EDB9A6F05D9BD0B92404EBE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		962D7718E16C0050A45703BD /* Build configuration list for PBXNativeTarget "NightGuard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25349646ABF73C06094F3D4A /* Debug */,
+				7D41384B6176DD20E739E750 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A089535FC1276667B766753A /* Build configuration list for PBXNativeTarget "NightGuardTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08CDDE856C038EE94FE49503 /* Debug */,
+				92C00C0375E8B5675FB0887B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A40FF29D72D212688AD56709 /* Build configuration list for PBXProject "NightGuard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				946C8E2A0F844084583DE2C9 /* Debug */,
+				DDC8A718C0F187AF3AFE7079 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		AF291DC793D38533D03F95AC /* Build configuration list for PBXNativeTarget "ShieldActionExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D9A8CC2D06CB5081E103FCD /* Debug */,
+				0DAB329A8B3FD05E1B8CC254 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		EB03E1C49FC00BFE4D817C02 /* Build configuration list for PBXNativeTarget "NightGuardUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				649499CA0F6B59497DD24219 /* Debug */,
+				D529CD3B3BCC050D89254743 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FE58AB9A6DEA428BBB3A2D72 /* Project object */;
+}

@@ -9,9 +9,9 @@ struct StopNightGuardIntent: AppIntent {
     @MainActor
     func perform() async throws -> some IntentResult {
         let shieldManager = ShieldManager.shared
-        await shieldManager.removeBedtimeShield()
+        shieldManager.removeBedtimeShield()
         ChainScheduler.shared.stopChainMonitoring()
-        await SimulatedShutdown.shared.endShutdown()
+        SimulatedShutdown.shared.endShutdown()
 
         return .result(dialog: "NightGuard has been deactivated. Good morning!")
     }

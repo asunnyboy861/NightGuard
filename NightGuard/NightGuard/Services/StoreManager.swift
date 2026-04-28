@@ -34,7 +34,7 @@ final class StoreManager: ObservableObject {
         switch result {
         case .success(let verification):
             let transaction = try checkVerified(verification)
-            await updatePremiumStatus(transaction)
+            updatePremiumStatus(transaction)
             await transaction.finish()
             return transaction
 
@@ -73,7 +73,7 @@ final class StoreManager: ObservableObject {
                 guard let self else { return }
                 do {
                     let transaction = try self.checkVerified(result)
-                    await self.updatePremiumStatus(transaction)
+                    self.updatePremiumStatus(transaction)
                     await transaction.finish()
                 } catch {
                     print("Transaction verification failed: \(error)")

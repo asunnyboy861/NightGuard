@@ -1,4 +1,6 @@
 import DeviceActivity
+import FamilyControls
+import ManagedSettings
 import Foundation
 
 class DeviceActivityMonitorExtension: DeviceActivityMonitor {
@@ -6,42 +8,36 @@ class DeviceActivityMonitorExtension: DeviceActivityMonitor {
     override func intervalDidStart(for activity: DeviceActivityName) {
         super.intervalDidStart(for: activity)
 
-        let shieldManager = ShieldManager.shared
-        let defaults = UserDefaults(suiteName: AppGroupConstants.suiteName)
-
-        let isHardLock = defaults?.bool(forKey: AppGroupKeys.isHardLock) ?? true
+        let defaults = UserDefaults(suiteName: "group.com.zzoutuo.NightGuard.shared")
+        let isHardLock = defaults?.bool(forKey: "isHardLock") ?? true
+        let store = ManagedSettingsStore()
 
         if isHardLock {
-            Task { @MainActor in
-                shieldManager.applyFullShield()
-            }
-        } else if let data = defaults?.data(forKey: AppGroupKeys.activitySelection),
+            store.shield.applicationCategories = .all()
+        } else if let data = defaults?.data(forKey: "activitySelection"),
                   let selection = try? JSONDecoder().decode(FamilyActivitySelection.self, from: data) {
-            Task { @MainActor in
-                shieldManager.applyBedtimeShield(selection: selection)
+            store.shield.applications = selection.applicationTokens
+            store.shield.webDomains = selection.webDomainTokens
+            if !selection.categoryTokens.isEmpty {
+                store.shield.applicationCategories = .specific(selection.categoryTokens)
             }
         }
 
-        defaults?.set(true, forKey: AppGroupKeys.isShieldActive)
+        defaults?.set(true, forKey: "isShieldActive")
     }
 
     override func intervalDidEnd(for activity: DeviceActivityName) {
         super.intervalDidEnd(for: activity)
 
-        let shieldManager = ShieldManager.shared
-        let chainScheduler = ChainScheduler.shared
+        let defaults = UserDefaults(suiteName: "group.com.zzoutuo.NightGuard.shared")
+        let store = ManagedSettingsStore()
+        store.clearAllSettings()
 
-        let slotIndex = extractSlotIndex(from: activity)
+        let isChainActive = defaults?.bool(forKey: "chainActive") ?? false
 
-        if let defaults = UserDefaults(suiteName: AppGroupConstants.suiteName),
-           defaults.bool(forKey: AppGroupKeys.chainActive) {
-            chainScheduler.handleSlotEnded(slotIndex: slotIndex)
-        } else {
-            Task { @MainActor in
-                shieldManager.removeBedtimeShield()
-            }
-            SimulatedShutdown.shared.endShutdown()
-            AccountabilityService.shared.scheduleWakeUpNotification()
+        if !isChainActive {
+            defaults?.set(false, forKey: "isShieldActive")
+            defaults?.set(true, forKey: "scheduleEnded")
         }
     }
 
@@ -51,15 +47,8 @@ class DeviceActivityMonitorExtension: DeviceActivityMonitor {
     ) {
         super.eventDidReachThreshold(event, activity: activity)
 
-        AccountabilityService.shared.notifyPartnerOfBypassAttempt(at: Date())
-    }
-
-    private func extractSlotIndex(from name: DeviceActivityName) -> Int {
-        let nameString = String(describing: name)
-        if nameString.hasPrefix("nightguard_slot_") {
-            let indexString = nameString.replacingOccurrences(of: "nightguard_slot_", with: "")
-            return Int(indexString) ?? 0
-        }
-        return 0
+        let defaults = UserDefaults(suiteName: "group.com.zzoutuo.NightGuard.shared")
+        defaults?.set(true, forKey: "bypassAttemptDetected")
+        defaults?.set(Date(), forKey: "bypassAttemptTime")
     }
 }

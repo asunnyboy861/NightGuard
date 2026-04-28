@@ -1,18 +1,21 @@
 import ManagedSettings
-import UIKit
+import FamilyControls
+import Foundation
 
-class ShieldActionExtension: ShieldActionExtension {
+class ShieldActionExtension: ShieldActionDelegate {
 
     override func handle(
         action: ShieldAction,
-        for application: Application,
+        for application: ApplicationToken,
         completionHandler: @escaping (ShieldActionResponse) -> Void
     ) {
         switch action {
         case .primaryButtonPressed:
             completionHandler(.close)
         case .secondaryButtonPressed:
-            AccountabilityService.shared.notifyPartnerOfEmergencyOverride()
+            let defaults = UserDefaults(suiteName: "group.com.zzoutuo.NightGuard.shared")
+            defaults?.set(true, forKey: "emergency_override_requested")
+            defaults?.set(Date(), forKey: "emergency_override_time")
             completionHandler(.defer)
         @unknown default:
             completionHandler(.close)
@@ -21,14 +24,16 @@ class ShieldActionExtension: ShieldActionExtension {
 
     override func handle(
         action: ShieldAction,
-        for webDomain: WebDomain,
+        for webDomain: WebDomainToken,
         completionHandler: @escaping (ShieldActionResponse) -> Void
     ) {
         switch action {
         case .primaryButtonPressed:
             completionHandler(.close)
         case .secondaryButtonPressed:
-            AccountabilityService.shared.notifyPartnerOfEmergencyOverride()
+            let defaults = UserDefaults(suiteName: "group.com.zzoutuo.NightGuard.shared")
+            defaults?.set(true, forKey: "emergency_override_requested")
+            defaults?.set(Date(), forKey: "emergency_override_time")
             completionHandler(.defer)
         @unknown default:
             completionHandler(.close)
@@ -37,14 +42,16 @@ class ShieldActionExtension: ShieldActionExtension {
 
     override func handle(
         action: ShieldAction,
-        for category: ActivityCategory,
+        for category: ActivityCategoryToken,
         completionHandler: @escaping (ShieldActionResponse) -> Void
     ) {
         switch action {
         case .primaryButtonPressed:
             completionHandler(.close)
         case .secondaryButtonPressed:
-            AccountabilityService.shared.notifyPartnerOfEmergencyOverride()
+            let defaults = UserDefaults(suiteName: "group.com.zzoutuo.NightGuard.shared")
+            defaults?.set(true, forKey: "emergency_override_requested")
+            defaults?.set(Date(), forKey: "emergency_override_time")
             completionHandler(.defer)
         @unknown default:
             completionHandler(.close)

@@ -1,7 +1,8 @@
+import ManagedSettingsUI
 import ManagedSettings
 import UIKit
 
-class ShieldConfigurationExtension: ShieldConfigurationExtension {
+class ShieldConfigurationExtension: ShieldConfigurationDataSource {
 
     override func configuration(shielding application: Application) -> ShieldConfiguration {
         ShieldConfiguration(
@@ -38,7 +39,7 @@ class ShieldConfigurationExtension: ShieldConfigurationExtension {
                 color: .white
             ),
             subtitle: ShieldConfiguration.Label(
-                text: "\(category.localizedName ?? "This category") is blocked to protect your sleep.",
+                text: "This category is blocked to protect your sleep.",
                 color: .lightGray
             ),
             primaryButtonLabel: ShieldConfiguration.Label(
@@ -88,7 +89,7 @@ class ShieldConfigurationExtension: ShieldConfigurationExtension {
                 color: .white
             ),
             subtitle: ShieldConfiguration.Label(
-                text: "\(category.localizedName ?? "This category") is blocked to protect your sleep.",
+                text: "This category is blocked to protect your sleep.",
                 color: .lightGray
             ),
             primaryButtonLabel: ShieldConfiguration.Label(

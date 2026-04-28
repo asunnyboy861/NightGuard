@@ -11,15 +11,15 @@ struct StartNightGuardIntent: AppIntent {
     func perform() async throws -> some IntentResult {
         let shieldManager = ShieldManager.shared
         let scheduleManager = ScheduleManager.shared
-        await scheduleManager.loadSettings()
+        scheduleManager.loadSettings()
 
         if let defaults = UserDefaults(suiteName: AppGroupConstants.suiteName),
            let data = defaults.data(forKey: AppGroupKeys.activitySelection),
            let selection = try? JSONDecoder().decode(FamilyActivitySelection.self, from: data) {
             if scheduleManager.isHardLock {
-                await shieldManager.applyFullShield()
+                shieldManager.applyFullShield()
             } else {
-                await shieldManager.applyBedtimeShield(selection: selection)
+                shieldManager.applyBedtimeShield(selection: selection)
             }
         }
 
@@ -30,7 +30,7 @@ struct StartNightGuardIntent: AppIntent {
         ) ?? Date().addingTimeInterval(8 * 3600)
 
         ChainScheduler.shared.startChainMonitoring(from: Date(), until: wakeTime)
-        await SimulatedShutdown.shared.startShutdown(until: wakeTime)
+        SimulatedShutdown.shared.startShutdown(until: wakeTime)
 
         return .result(dialog: "NightGuard is now active. Sleep well!")
     }

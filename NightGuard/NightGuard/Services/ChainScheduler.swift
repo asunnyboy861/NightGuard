@@ -24,7 +24,7 @@ final class ChainScheduler {
 
         center.stopMonitoring()
 
-        var currentSlot = 0
+        let currentSlot = 0
         scheduleSlot(index: currentSlot, start: startTime, duration: slotDuration, totalSlots: numberOfSlots)
 
         defaults?.set(true, forKey: AppGroupKeys.chainActive)

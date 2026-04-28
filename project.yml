@@ -1,0 +1,146 @@
+name: NightGuard
+options:
+  bundleIdPrefix: com.zzoutuo
+  deploymentTarget:
+    iOS: "17.0"
+  developmentTeam: JP4TN5PTS3
+  xcodeVersion: "16.3"
+  generateEmptyDirectories: true
+  groupSortPosition: top
+
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    DEVELOPMENT_TEAM: JP4TN5PTS3
+    CODE_SIGN_STYLE: Automatic
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    TARGETED_DEVICE_FAMILY: "1,2"
+    ENABLE_PREVIEWS: YES
+    GENERATE_INFOPLIST_FILE: YES
+    ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS: YES
+    LOCALIZATION_PREFERS_STRING_CATALOGS: YES
+
+targets:
+  NightGuard:
+    type: application
+    platform: iOS
+    sources:
+      - path: NightGuard/NightGuard
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.zzoutuo.NightGuard
+        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
+        INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: YES
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+        CODE_SIGN_ENTITLEMENTS: NightGuard/NightGuard/NightGuard.entitlements
+        LD_RUNPATH_SEARCH_PATHS: "$(inherited) @executable_path/Frameworks"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+    entitlements:
+      path: NightGuard/NightGuard/NightGuard.entitlements
+    dependencies:
+      - target: ShieldActionExtension
+      - target: ShieldConfigurationExtension
+      - target: DeviceActivityMonitorExtension
+      - sdk: FamilyControls.framework
+      - sdk: ManagedSettings.framework
+      - sdk: ManagedSettingsUI.framework
+      - sdk: DeviceActivity.framework
+      - sdk: StoreKit.framework
+      - sdk: AppIntents.framework
+      - sdk: UserNotifications.framework
+      - sdk: SwiftData.framework
+      - sdk: MessageUI.framework
+
+  ShieldActionExtension:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: NightGuard/Extensions/ShieldActionExtension
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.zzoutuo.NightGuard.ShieldActionExtension
+        CODE_SIGN_ENTITLEMENTS: NightGuard/Extensions/ShieldActionExtension/ShieldActionExtension.entitlements
+        LD_RUNPATH_SEARCH_PATHS: "$(inherited) @executable_path/Frameworks @loader_path/Frameworks"
+        INFOPLIST_FILE: NightGuard/Extensions/ShieldActionExtension/Info.plist
+        GENERATE_INFOPLIST_FILE: NO
+    entitlements:
+      path: NightGuard/Extensions/ShieldActionExtension/ShieldActionExtension.entitlements
+    dependencies:
+      - sdk: FamilyControls.framework
+      - sdk: ManagedSettings.framework
+
+  ShieldConfigurationExtension:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: NightGuard/Extensions/ShieldConfigurationExtension
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.zzoutuo.NightGuard.ShieldConfigurationExtension
+        CODE_SIGN_ENTITLEMENTS: NightGuard/Extensions/ShieldConfigurationExtension/ShieldConfigurationExtension.entitlements
+        LD_RUNPATH_SEARCH_PATHS: "$(inherited) @executable_path/Frameworks @loader_path/Frameworks"
+        INFOPLIST_FILE: NightGuard/Extensions/ShieldConfigurationExtension/Info.plist
+        GENERATE_INFOPLIST_FILE: NO
+    entitlements:
+      path: NightGuard/Extensions/ShieldConfigurationExtension/ShieldConfigurationExtension.entitlements
+    dependencies:
+      - sdk: FamilyControls.framework
+      - sdk: ManagedSettings.framework
+      - sdk: ManagedSettingsUI.framework
+
+  DeviceActivityMonitorExtension:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: NightGuard/Extensions/DeviceActivityMonitorExtension
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.zzoutuo.NightGuard.DeviceActivityMonitorExtension
+        CODE_SIGN_ENTITLEMENTS: NightGuard/Extensions/DeviceActivityMonitorExtension/DeviceActivityMonitorExtension.entitlements
+        LD_RUNPATH_SEARCH_PATHS: "$(inherited) @executable_path/Frameworks @loader_path/Frameworks"
+        INFOPLIST_FILE: NightGuard/Extensions/DeviceActivityMonitorExtension/Info.plist
+        GENERATE_INFOPLIST_FILE: NO
+    entitlements:
+      path: NightGuard/Extensions/DeviceActivityMonitorExtension/DeviceActivityMonitorExtension.entitlements
+    dependencies:
+      - sdk: FamilyControls.framework
+      - sdk: ManagedSettings.framework
+      - sdk: DeviceActivity.framework
+
+  NightGuardTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: NightGuard/NightGuardTests
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.zzoutuo.NightGuard.NightGuardTests
+        BUNDLE_LOADER: "$(TEST_HOST)"
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/NightGuard.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NightGuard"
+    dependencies:
+      - target: NightGuard
+
+  NightGuardUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: NightGuard/NightGuardUITests
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.zzoutuo.NightGuard.NightGuardUITests
+    dependencies:
+      - target: NightGuard
+
+schemes:
+  NightGuard:
+    build:
+      targets:
+        NightGuard: all
+    run:
+      config: Debug
+    archive:
+      config: Release

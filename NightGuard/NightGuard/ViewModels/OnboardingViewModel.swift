@@ -54,6 +54,7 @@ final class OnboardingViewModel: ObservableObject {
 
     func completeOnboarding() {
         defaults?.set(true, forKey: AppGroupKeys.isOnboarded)
+        UserDefaults.standard.set(true, forKey: AppGroupKeys.isOnboarded)
     }
 }
 

@@ -6,6 +6,8 @@ struct AppSelectionView: View {
     @EnvironmentObject var shieldViewModel: ShieldViewModel
     @State private var showFamilyActivityPicker = false
     @State private var activitySelection = FamilyActivitySelection()
+    @State private var showPermissionAlert = false
+    @State private var isCheckingPermission = false
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
@@ -25,40 +27,84 @@ struct AppSelectionView: View {
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 32)
 
-                if !activitySelection.applicationTokens.isEmpty {
-                    VStack(spacing: 8) {
-                        Label {
-                            Text("\(activitySelection.applicationTokens.count) apps selected")
-                        } icon: {
-                            Image(systemName: "checkmark.circle.fill")
-                                .foregroundStyle(.green)
+                if !ShieldManager.shared.isAuthorized {
+                    VStack(spacing: 12) {
+                        HStack {
+                            Image(systemName: "exclamationmark.triangle.fill")
+                                .foregroundStyle(.orange)
+                            Text("Screen Time Access Required")
+                                .font(.subheadline)
+                                .fontWeight(.medium)
+                        }
+
+                        Text("NightGuard needs Screen Time permission to block apps. This is a system requirement for all focus apps.")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                            .multilineTextAlignment(.center)
+
+                        Button {
+                            requestPermission()
+                        } label: {
+                            if isCheckingPermission {
+                                ProgressView()
+                                    .progressViewStyle(.circular)
+                            } else {
+                                Label("Grant Access", systemImage: "lock.open.fill")
+                            }
                         }
                         .font(.subheadline)
-
-                        if !activitySelection.categoryTokens.isEmpty {
+                        .fontWeight(.medium)
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 10)
+                        .background(Color.orange.opacity(0.15))
+                        .foregroundStyle(.orange)
+                        .clipShape(Capsule())
+                        .disabled(isCheckingPermission)
+                    }
+                    .padding()
+                    .background(Color.orange.opacity(0.08))
+                    .clipShape(RoundedRectangle(cornerRadius: 12))
+                    .padding(.horizontal, 32)
+                } else {
+                    if !activitySelection.applicationTokens.isEmpty {
+                        VStack(spacing: 8) {
                             Label {
-                                Text("\(activitySelection.categoryTokens.count) categories selected")
+                                Text("\(activitySelection.applicationTokens.count) apps selected")
                             } icon: {
                                 Image(systemName: "checkmark.circle.fill")
                                     .foregroundStyle(.green)
                             }
                             .font(.subheadline)
+
+                            if !activitySelection.categoryTokens.isEmpty {
+                                Label {
+                                    Text("\(activitySelection.categoryTokens.count) categories selected")
+                                } icon: {
+                                    Image(systemName: "checkmark.circle.fill")
+                                        .foregroundStyle(.green)
+                                }
+                                .font(.subheadline)
+                            }
                         }
                     }
-                }
 
-                Button {
-                    showFamilyActivityPicker = true
-                } label: {
-                    Label(activitySelection.applicationTokens.isEmpty ? "Choose Apps" : "Change Selection", systemImage: "square.grid.2x2")
-                        .font(.headline)
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 14)
-                        .background(Color.indigo)
-                        .foregroundStyle(.white)
-                        .clipShape(RoundedRectangle(cornerRadius: 12))
+                    Button {
+                        if ShieldManager.shared.isAuthorized {
+                            showFamilyActivityPicker = true
+                        } else {
+                            showPermissionAlert = true
+                        }
+                    } label: {
+                        Label(activitySelection.applicationTokens.isEmpty ? "Choose Apps" : "Change Selection", systemImage: "square.grid.2x2")
+                            .font(.headline)
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 14)
+                            .background(Color.indigo)
+                            .foregroundStyle(.white)
+                            .clipShape(RoundedRectangle(cornerRadius: 12))
+                    }
+                    .padding(.horizontal, 32)
                 }
-                .padding(.horizontal, 32)
 
                 Spacer()
             }
@@ -75,10 +121,33 @@ struct AppSelectionView: View {
                 shieldViewModel.selectedApps = newValue
             }
             .onAppear {
+                ShieldManager.shared.checkAuthorization()
                 if let selection = shieldViewModel.selectedApps {
                     activitySelection = selection
                 }
             }
+            .alert("Permission Required", isPresented: $showPermissionAlert) {
+                Button("Open Settings", role: .none) {
+                    if let url = URL(string: UIApplication.openSettingsURLString) {
+                        UIApplication.shared.open(url)
+                    }
+                }
+                Button("Cancel", role: .cancel) {}
+            } message: {
+                Text("Please enable Screen Time access in Settings to block apps.")
+            }
+        }
+    }
+
+    private func requestPermission() {
+        isCheckingPermission = true
+        Task {
+            do {
+                try await ShieldManager.shared.requestAuthorization()
+            } catch {
+                showPermissionAlert = true
+            }
+            isCheckingPermission = false
         }
     }
 }

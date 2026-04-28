@@ -25,7 +25,7 @@ Set your bedtime and wake-up time once. NightGuard automatically activates prote
 Add a friend who gets notified if you try to bypass your bedtime. Social accountability makes it 3x more likely you'll stick to your sleep schedule.
 
 🌙 SIMULATED SHUTDOWN
-NightGuard makes your phone appear to shut down during bedtime, removing the temptation to keep using it.
+NightGuard displays a full-screen black overlay during bedtime, simulating a shutdown to remove the temptation to keep using your phone. Your device remains on for alarms and emergency calls.
 
 🎙️ SIRI VOICE CONTROL
 "Hey Siri, start NightGuard" — activate protection hands-free with Siri shortcuts.
@@ -85,8 +85,10 @@ https://nightguard.app
 
 ## App Review Notes
 - This app uses FamilyControls API to block apps during bedtime
-- Users must grant Screen Time permission during onboarding
+- Users must grant Screen Time permission during onboarding (system requirement)
 - The app requires iOS 17.0 or later
 - Hard Lock mode blocks all app categories using ManagedSettings API
 - Chain scheduling overcomes DeviceActivity's 45-minute monitoring limit
+- Simulated shutdown is a black screen overlay, not actual device shutdown
 - Test account: No special account needed, app works with standard Apple ID
+- App selection uses iOS system FamilyActivityPicker (language follows device settings)

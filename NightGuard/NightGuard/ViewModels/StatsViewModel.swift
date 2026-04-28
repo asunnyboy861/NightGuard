@@ -9,8 +9,10 @@ final class StatsViewModel: ObservableObject {
     @Published var longestStreak: Int = 0
     @Published var totalBypassAttempts: Int = 0
     @Published var averageSleepHours: Double = 0
+    @Published var isHealthKitConnected = false
 
     private let defaults = UserDefaults(suiteName: AppGroupConstants.suiteName)
+    let healthKitService = HealthKitService.shared
 
     func loadStats(modelContext: ModelContext) {
         let descriptor = FetchDescriptor<SleepRecord>(sortBy: [SortDescriptor(\.date, order: .reverse)])
@@ -28,6 +30,28 @@ final class StatsViewModel: ObservableObject {
         }
 
         loadStreaks(modelContext: modelContext)
+        isHealthKitConnected = healthKitService.isAuthorized
+    }
+
+    func requestHealthKitAccess() async {
+        do {
+            let granted = try await healthKitService.requestAuthorization()
+            isHealthKitConnected = granted
+        } catch {
+            isHealthKitConnected = false
+        }
+    }
+
+    func syncUnsyncedRecords(modelContext: ModelContext) async {
+        let unsynced = recentRecords.filter { !$0.isSyncedToHealthKit }
+        for record in unsynced {
+            do {
+                try await healthKitService.saveSleepAnalysis(startDate: record.bedtime, endDate: record.wakeTime)
+                record.isSyncedToHealthKit = true
+            } catch {
+                continue
+            }
+        }
     }
 
     private func loadStreaks(modelContext: ModelContext) {

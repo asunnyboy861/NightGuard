@@ -40,16 +40,19 @@ struct ShieldView: View {
                             .font(.system(size: 70))
                             .foregroundStyle(.white)
                     }
+                    .accessibilityLabel(shieldViewModel.isShieldActive ? "Shield is active" : "Shield is inactive")
 
                     VStack(spacing: 8) {
                         Text(shieldViewModel.isShieldActive ? "Protection Active" : "Protection Off")
                             .font(.title)
                             .fontWeight(.bold)
+                            .accessibleStatus(label: "Protection status", value: shieldViewModel.isShieldActive ? "Active" : "Off")
 
                         if shieldViewModel.isShieldActive {
                             Text(SimulatedShutdown.shared.remainingTime)
                                 .font(.title2)
                                 .foregroundStyle(.secondary)
+                                .accessibleStatus(label: "Time remaining", value: SimulatedShutdown.shared.remainingTime)
                         }
                     }
 
@@ -67,6 +70,7 @@ struct ShieldView: View {
                                     .clipShape(RoundedRectangle(cornerRadius: 12))
                             }
                             .padding(.horizontal, 32)
+                            .accessibleButton(label: "Select apps to block", hint: "Choose which apps to block during bedtime")
                         }
 
                         Button {
@@ -88,6 +92,10 @@ struct ShieldView: View {
                             .clipShape(RoundedRectangle(cornerRadius: 12))
                         }
                         .padding(.horizontal, 32)
+                        .accessibleButton(
+                            label: shieldViewModel.isShieldActive ? "Deactivate shield" : "Activate shield",
+                            hint: shieldViewModel.isShieldActive ? "Turns off app blocking until next schedule" : "Starts blocking selected apps now"
+                        )
 
                         if shieldViewModel.isShieldActive {
                             Button("Emergency Override", role: .destructive) {
@@ -95,12 +103,14 @@ struct ShieldView: View {
                             }
                             .font(.subheadline)
                             .foregroundStyle(.red)
+                            .accessibleButton(label: "Emergency override", hint: "Disables all protection immediately and notifies your accountability partner")
                         }
                     }
 
                     Toggle("Hard Lock Mode", isOn: $shieldViewModel.isHardLock)
                         .font(.subheadline)
                         .padding(.horizontal, 32)
+                        .accessibleStatus(label: "Hard Lock Mode", value: shieldViewModel.isHardLock ? "On" : "Off")
 
                     Spacer()
                 }

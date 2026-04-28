@@ -1,16 +1,19 @@
 import SwiftUI
 import SwiftData
+import Charts
 
 struct StatsView: View {
 
     @StateObject private var viewModel = StatsViewModel()
     @Environment(\.modelContext) private var modelContext
+    @State private var selectedTimeRange: SleepChartView.TimeRange = .week
 
     var body: some View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 20) {
-                    HStack(spacing: 16) {
+
+                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
                         StatCard(
                             title: "Avg Sleep",
                             value: viewModel.formattedAverageSleep,
@@ -26,10 +29,7 @@ struct StatsView: View {
                             icon: "flame.fill",
                             color: .orange
                         )
-                    }
-                    .padding(.horizontal)
 
-                    HStack(spacing: 16) {
                         StatCard(
                             title: "Best Streak",
                             value: "\(viewModel.longestStreak)",
@@ -48,6 +48,33 @@ struct StatsView: View {
                     }
                     .padding(.horizontal)
 
+                    HealthKitCard(
+                        isConnected: viewModel.isHealthKitConnected,
+                        onConnect: {
+                            await viewModel.requestHealthKitAccess()
+                        },
+                        onSync: {
+                            await viewModel.syncUnsyncedRecords(modelContext: modelContext)
+                        }
+                    )
+                    .padding(.horizontal)
+
+                    VStack(alignment: .leading, spacing: 12) {
+                        Picker("Time Range", selection: $selectedTimeRange) {
+                            ForEach(SleepChartView.TimeRange.allCases, id: \.self) { range in
+                                Text(range.rawValue).tag(range)
+                            }
+                        }
+                        .pickerStyle(.segmented)
+                        .padding(.horizontal)
+
+                        SleepChartView(
+                            records: viewModel.recentRecords,
+                            timeRange: selectedTimeRange
+                        )
+                        .padding(.horizontal)
+                    }
+
                     VStack(alignment: .leading, spacing: 12) {
                         Text("Recent Nights")
                             .font(.headline)
@@ -61,9 +88,11 @@ struct StatsView: View {
                             )
                             .padding()
                         } else {
-                            ForEach(viewModel.recentRecords.prefix(7)) { record in
-                                SleepRecordRow(record: record)
-                                    .padding(.horizontal)
+                            LazyVStack(spacing: 8) {
+                                ForEach(viewModel.recentRecords.prefix(7)) { record in
+                                    SleepRecordRow(record: record)
+                                        .padding(.horizontal)
+                                }
                             }
                         }
                     }
@@ -107,6 +136,62 @@ struct StatCard: View {
                 .foregroundStyle(.secondary)
         }
         .frame(maxWidth: .infinity)
+        .padding()
+        .background(.ultraThinMaterial)
+        .clipShape(RoundedRectangle(cornerRadius: 16))
+    }
+}
+
+struct HealthKitCard: View {
+    let isConnected: Bool
+    let onConnect: @MainActor () async -> Void
+    let onSync: @MainActor () async -> Void
+
+    var body: some View {
+        HStack(spacing: 12) {
+            Image(systemName: "heart.fill")
+                .font(.title2)
+                .foregroundStyle(.red)
+
+            if isConnected {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("Apple Health Connected")
+                        .font(.subheadline)
+                        .fontWeight(.medium)
+                    Text("Sleep data syncing automatically")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+
+                Spacer()
+
+                Button {
+                    Task { await onSync() }
+                } label: {
+                    Image(systemName: "arrow.triangle.2.circlepath")
+                        .foregroundStyle(.green)
+                }
+                .accessibilityLabel("Sync with Apple Health")
+            } else {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("Apple Health")
+                        .font(.subheadline)
+                        .fontWeight(.medium)
+                    Text("Connect to sync your sleep data")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+
+                Spacer()
+
+                Button("Connect") {
+                    Task { await onConnect() }
+                }
+                .font(.subheadline)
+                .fontWeight(.medium)
+                .foregroundStyle(.indigo)
+            }
+        }
         .padding()
         .background(.ultraThinMaterial)
         .clipShape(RoundedRectangle(cornerRadius: 16))

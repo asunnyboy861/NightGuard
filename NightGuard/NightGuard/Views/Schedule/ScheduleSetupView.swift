@@ -3,72 +3,65 @@ import SwiftUI
 struct ScheduleSetupView: View {
 
     @StateObject private var viewModel = ScheduleViewModel()
+    @State private var showSaveConfirmation = false
 
     var body: some View {
         NavigationStack {
             Form {
-                Section("Bedtime") {
-                    HStack {
-                        Text("Sleep at")
-                        Spacer()
-                        Picker("Hour", selection: $viewModel.bedtimeHour) {
-                            ForEach(0..<24) { Text("\($0)").tag($0) }
-                        }
-                        .pickerStyle(.menu)
-                        Text(":")
-                        Picker("Minute", selection: $viewModel.bedtimeMinute) {
-                            ForEach(0..<60) { Text(String(format: "%02d", $0)).tag($0) }
-                        }
-                        .pickerStyle(.menu)
-                    }
-                }
+                Section("Sleep Schedule") {
+                    DatePicker(
+                        "Bedtime",
+                        selection: $viewModel.bedtime,
+                        displayedComponents: .hourAndMinute
+                    )
 
-                Section("Wake Up") {
-                    HStack {
-                        Text("Wake at")
-                        Spacer()
-                        Picker("Hour", selection: $viewModel.wakeUpHour) {
-                            ForEach(0..<24) { Text("\($0)").tag($0) }
-                        }
-                        .pickerStyle(.menu)
-                        Text(":")
-                        Picker("Minute", selection: $viewModel.wakeUpMinute) {
-                            ForEach(0..<60) { Text(String(format: "%02d", $0)).tag($0) }
-                        }
-                        .pickerStyle(.menu)
-                    }
+                    DatePicker(
+                        "Wake Up",
+                        selection: $viewModel.wakeUpTime,
+                        displayedComponents: .hourAndMinute
+                    )
 
                     HStack {
-                        Text("Sleep Duration")
+                        Text("Duration")
                         Spacer()
                         Text(viewModel.sleepDurationText)
                             .foregroundStyle(.secondary)
+                            .fontWeight(.medium)
                     }
                 }
 
                 Section("Repeat") {
                     HStack(spacing: 8) {
                         ForEach(1...7, id: \.self) { day in
-                            Circle()
-                                .fill(viewModel.selectedWeekdays.contains(day) ? Color.indigo : Color.gray.opacity(0.2))
-                                .frame(width: 40, height: 40)
-                                .overlay {
-                                    Text(viewModel.weekdayNames[day - 1])
-                                        .font(.caption)
-                                        .fontWeight(.medium)
-                                        .foregroundStyle(viewModel.selectedWeekdays.contains(day) ? .white : .primary)
-                                }
-                                .onTapGesture {
-                                    withAnimation { viewModel.toggleWeekday(day) }
-                                }
+                            DayButton(
+                                name: viewModel.weekdayNames[day - 1],
+                                isSelected: viewModel.selectedWeekdays.contains(day)
+                            ) {
+                                viewModel.toggleWeekday(day)
+                            }
                         }
                     }
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 4)
                 }
 
-                Section("Lock Mode") {
-                    Toggle("Hard Lock", isOn: $viewModel.isHardLock)
+                Section("Smart Reminders") {
+                    Toggle("Wind Down Reminder", isOn: $viewModel.enableWindDownReminder)
+
+                    if viewModel.enableWindDownReminder {
+                        Stepper(
+                            "\(viewModel.windDownMinutes) min before bedtime",
+                            value: $viewModel.windDownMinutes,
+                            in: 15...120,
+                            step: 15
+                        )
+                    }
+
+                    Toggle("Wake Up Notification", isOn: $viewModel.enableWakeUpNotification)
+                }
+
+                Section("Protection") {
+                    Toggle("Hard Lock Mode", isOn: $viewModel.isHardLock)
                     Text("Hard Lock makes it nearly impossible to bypass your bedtime protection.")
                         .font(.caption)
                         .foregroundStyle(.secondary)
@@ -81,12 +74,39 @@ struct ScheduleSetupView: View {
                 Section {
                     Button("Save Schedule") {
                         viewModel.saveSchedule()
+                        showSaveConfirmation = true
                     }
                     .frame(maxWidth: .infinity)
                     .foregroundStyle(.indigo)
                 }
             }
             .navigationTitle("Schedule")
+            .alert("Schedule Saved", isPresented: $showSaveConfirmation) {
+                Button("OK") { }
+            } message: {
+                Text("Your bedtime schedule has been saved and notifications have been updated.")
+            }
         }
+    }
+}
+
+struct DayButton: View {
+    let name: String
+    let isSelected: Bool
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            Text(name)
+                .font(.caption)
+                .fontWeight(.medium)
+                .foregroundStyle(isSelected ? .white : .primary)
+                .frame(width: 36, height: 36)
+                .background(isSelected ? Color.indigo : Color.gray.opacity(0.2))
+                .clipShape(Circle())
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel("\(name)\(isSelected ? ", selected" : "")")
+        .accessibilityHint("Double tap to \(isSelected ? "deselect" : "select")")
     }
 }

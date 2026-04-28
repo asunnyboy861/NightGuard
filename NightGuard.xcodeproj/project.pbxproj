@@ -64,6 +64,11 @@
 		FA0F9216AB9ECFC497D5EF09 /* AccountabilityPartner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BAF501C690098789B14990 /* AccountabilityPartner.swift */; };
 		FABE11FB7F14988D3C27D37F /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61727D89EF3E8563C7706294 /* NotificationManager.swift */; };
 		FCB9C1E0DB706048BF50FABE /* NightGuardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DC9DCC50819AD9A2D56C47 /* NightGuardApp.swift */; };
+		BFE590A85B5E4428A59618E3 /* HealthKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697EC81754D4202A05A4509 /* HealthKitService.swift */; };
+		7791A50335B04DC08552DE9A /* PartnerNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAD3EE408847F9AD1BEF92 /* PartnerNotificationService.swift */; };
+		BDDACA515D9B4595B097BC42 /* "View+Accessibility.swift" in Sources */ = {isa = PBXBuildFile; fileRef = 90670B53D825449E91F1EB5F /* "View+Accessibility.swift" */; };
+		97184F4C97DA40EEA1D1FFB8 /* PartnerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91129F4EEC547BF8988980E /* PartnerCardView.swift */; };
+		D5F69A68F0374EFBBDC4CF57 /* SleepChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CBF6D92BE94B1997B27A4F /* SleepChartView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -197,6 +202,11 @@
 		F5EC7D25A18D1C4340F270AF /* ShieldManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldManager.swift; sourceTree = "<group>"; };
 		F8F0F39F9E1EC20E8F58A61F /* SupportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportView.swift; sourceTree = "<group>"; };
 		FD9D3416BD5171A976F8A23D /* SleepRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepRecord.swift; sourceTree = "<group>"; };
+		4697EC81754D4202A05A4509 /* HealthKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitService.swift; sourceTree = "<group>"; };
+		56FAD3EE408847F9AD1BEF92 /* PartnerNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerNotificationService.swift; sourceTree = "<group>"; };
+		90670B53D825449E91F1EB5F /* "View+Accessibility.swift" */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Accessibility.swift"; sourceTree = "<group>"; };
+		A91129F4EEC547BF8988980E /* PartnerCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerCardView.swift; sourceTree = "<group>"; };
+		D4CBF6D92BE94B1997B27A4F /* SleepChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepChartView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -338,6 +348,7 @@
 			isa = PBXGroup;
 			children = (
 				7DA70610835DEB609F3FBCE5 /* PartnerView.swift */,
+				A91129F4EEC547BF8988980E /* PartnerCardView.swift */,
 			);
 			path = Partner;
 			sourceTree = "<group>";
@@ -350,6 +361,8 @@
 				61727D89EF3E8563C7706294 /* NotificationManager.swift */,
 				43B1BEB19FB7E65DDB458BF8 /* ScheduleManager.swift */,
 				F5EC7D25A18D1C4340F270AF /* ShieldManager.swift */,
+				56FAD3EE408847F9AD1BEF92 /* PartnerNotificationService.swift */,
+				4697EC81754D4202A05A4509 /* HealthKitService.swift */,
 				2E1DCBEC60102DFFE28BBFB5 /* SimulatedShutdown.swift */,
 				3022B2CB2B405D543A0FF379 /* StoreManager.swift */,
 			);
@@ -371,6 +384,7 @@
 			isa = PBXGroup;
 			children = (
 				9DAB3ACE93DF6B9DE55D999F /* StatsView.swift */,
+				D4CBF6D92BE94B1997B27A4F /* SleepChartView.swift */,
 			);
 			path = Stats;
 			sourceTree = "<group>";
@@ -419,6 +433,7 @@
 			isa = PBXGroup;
 			children = (
 				0684E6757BBA94A2472B5A7A /* AppGroupConstants.swift */,
+				90670B53D825449E91F1EB5F /* "View+Accessibility.swift" */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -741,6 +756,11 @@
 				346A939C95A9C426045551F1 /* ScheduleViewModel.swift in Sources */,
 				B52E2B9B6AA896C3AE33E8C7 /* SettingsView.swift in Sources */,
 				C7133F03AAD7297124612E72 /* ShieldManager.swift in Sources */,
+				BFE590A85B5E4428A59618E3 /* HealthKitService.swift in Sources */,
+				7791A50335B04DC08552DE9A /* PartnerNotificationService.swift in Sources */,
+				BDDACA515D9B4595B097BC42 /* "View+Accessibility.swift" in Sources */,
+				97184F4C97DA40EEA1D1FFB8 /* PartnerCardView.swift in Sources */,
+				D5F69A68F0374EFBBDC4CF57 /* SleepChartView.swift in Sources */,
 				55CB795AC180831F45C22AFD /* ShieldView.swift in Sources */,
 				1BD861B62184D7207DDC4BE3 /* ShieldViewModel.swift in Sources */,
 				497DF768746BD2949F6BECB6 /* SimulatedShutdown.swift in Sources */,

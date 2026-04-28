@@ -7,6 +7,8 @@ struct PaywallView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var selectedProductID: String?
     @State private var isPurchasing = false
+    @State private var showError = false
+    @State private var errorMessage = ""
 
     var body: some View {
         NavigationStack {
@@ -43,16 +45,23 @@ struct PaywallView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 16))
                         .padding(.horizontal)
 
-                        VStack(spacing: 12) {
-                            ForEach(storeManager.products, id: \.id) { product in
-                                ProductRow(
-                                    product: product,
-                                    isSelected: selectedProductID == product.id,
-                                    onSelect: { selectedProductID = product.id }
-                                )
+                        if storeManager.products.isEmpty {
+                            ProgressView("Loading products...")
+                                .progressViewStyle(.circular)
+                                .tint(.white)
+                                .padding()
+                        } else {
+                            VStack(spacing: 12) {
+                                ForEach(storeManager.products, id: \.id) { product in
+                                    ProductRow(
+                                        product: product,
+                                        isSelected: selectedProductID == product.id,
+                                        onSelect: { selectedProductID = product.id }
+                                    )
+                                }
                             }
+                            .padding(.horizontal)
                         }
-                        .padding(.horizontal)
 
                         Button {
                             purchaseSelectedProduct()
@@ -62,7 +71,7 @@ struct PaywallView: View {
                                     .progressViewStyle(.circular)
                                     .tint(.indigo)
                             } else {
-                                Text("Subscribe")
+                                Text(buttonText)
                                     .fontWeight(.bold)
                             }
                         }
@@ -73,7 +82,7 @@ struct PaywallView: View {
                         .foregroundStyle(.indigo)
                         .clipShape(RoundedRectangle(cornerRadius: 12))
                         .padding(.horizontal)
-                        .disabled(isPurchasing || selectedProductID == nil)
+                        .disabled(isPurchasing || selectedProductID == nil || storeManager.products.isEmpty)
 
                         Button("Restore Purchases") {
                             Task { await storeManager.restorePurchases() }
@@ -96,6 +105,26 @@ struct PaywallView: View {
                         .foregroundStyle(.white)
                 }
             }
+            .alert("Purchase Failed", isPresented: $showError) {
+                Button("OK") { }
+            } message: {
+                Text(errorMessage)
+            }
+        }
+    }
+
+    private var buttonText: String {
+        guard let productID = selectedProductID,
+              let product = storeManager.products.first(where: { $0.id == productID }) else {
+            return "Subscribe"
+        }
+
+        if product.id == "com.zzoutuo.NightGuard.monthly" {
+            return "Start Free Trial"
+        } else if product.id == "com.zzoutuo.NightGuard.lifetime" {
+            return "Purchase \(product.displayPrice)"
+        } else {
+            return "Subscribe \(product.displayPrice)/year"
         }
     }
 
@@ -109,7 +138,8 @@ struct PaywallView: View {
                 _ = try await storeManager.purchase(product)
                 dismiss()
             } catch {
-                print("Purchase failed: \(error)")
+                errorMessage = error.localizedDescription
+                showError = true
             }
             isPurchasing = false
         }
@@ -155,24 +185,39 @@ struct ProductRow: View {
 
                 Spacer()
 
-                Text(product.displayPrice)
-                    .font(.title3)
-                    .fontWeight(.bold)
-                    .foregroundStyle(.white)
+                VStack(alignment: .trailing, spacing: 4) {
+                    if product.id == "com.zzoutuo.NightGuard.monthly" {
+                        Text("7-Day Free Trial")
+                            .font(.caption2)
+                            .fontWeight(.bold)
+                            .padding(.horizontal, 8)
+                            .padding(.vertical, 4)
+                            .background(.green)
+                            .foregroundStyle(.white)
+                            .clipShape(Capsule())
+                    }
 
-                if product.subscription?.subscriptionPeriod.value == 12 {
-                    Text("Best Value")
-                        .font(.caption2)
-                        .fontWeight(.bold)
-                        .padding(.horizontal, 8)
-                        .padding(.vertical, 4)
-                        .background(.yellow)
-                        .foregroundStyle(.black)
-                        .clipShape(Capsule())
+                    HStack(spacing: 8) {
+                        Text(product.displayPrice)
+                            .font(.title3)
+                            .fontWeight(.bold)
+                            .foregroundStyle(.white)
+
+                        if product.subscription?.subscriptionPeriod.value == 12 {
+                            Text("Best Value")
+                                .font(.caption2)
+                                .fontWeight(.bold)
+                                .padding(.horizontal, 8)
+                                .padding(.vertical, 4)
+                                .background(.yellow)
+                                .foregroundStyle(.black)
+                                .clipShape(Capsule())
+                        }
+
+                        Image(systemName: isSelected ? "checkmark.circle.fill" : "circle")
+                            .foregroundStyle(isSelected ? .yellow : .white.opacity(0.5))
+                    }
                 }
-
-                Image(systemName: isSelected ? "checkmark.circle.fill" : "circle")
-                    .foregroundStyle(isSelected ? .yellow : .white.opacity(0.5))
             }
             .padding()
             .background(isSelected ? Color.white.opacity(0.2) : Color.white.opacity(0.05))

@@ -33,21 +33,21 @@ struct SettingsView: View {
                 }
 
                 Section("Support") {
-                    Link(destination: URL(string: "https://nightguard.app/support")!) {
+                    Link(destination: URL(string: "https://asunnyboy861.github.io/NightGuard/support.html")!) {
                         Label("Help & Support", systemImage: "questionmark.circle")
                     }
 
-                    Link(destination: URL(string: "mailto:support@nightguard.app")!) {
+                    Link(destination: URL(string: "mailto:iocompile67692@gmail.com")!) {
                         Label("Contact Us", systemImage: "envelope")
                     }
                 }
 
                 Section("Legal") {
-                    Link(destination: URL(string: "https://nightguard.app/privacy")!) {
+                    Link(destination: URL(string: "https://asunnyboy861.github.io/NightGuard/privacy.html")!) {
                         Label("Privacy Policy", systemImage: "hand.raised")
                     }
 
-                    Link(destination: URL(string: "https://nightguard.app/terms")!) {
+                    Link(destination: URL(string: "https://asunnyboy861.github.io/NightGuard/terms.html")!) {
                         Label("Terms of Use", systemImage: "doc.text")
                     }
                 }
